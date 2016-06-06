@@ -1,0 +1,16 @@
+[submodule "coreclr"]
+	path = coreclr
+	url = https://github.com/dotnet/coreclr.git
+	branch = release/1.0.0
+[submodule "corefx"]
+	path = corefx
+	url = https://github.com/dotnet/corefx.git
+	branch = release/1.0.0
+[submodule "core-setup"]
+	path = core-setup
+	url = https://github.com/dotnet/core-setup.git
+	branch = release/1.0.0
+[submodule "cli"]
+	path = cli
+	url = https://github.com/dotnet/cli.git
+	branch = rel/1.0.0
