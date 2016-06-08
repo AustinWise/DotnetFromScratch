@@ -40,7 +40,7 @@ if NOT errorlevel 0 (
 popd
 
 set "CORECLR_PACK_1=%TOP_DIR%\coreclr\bin\Product\Windows_NT.x64.Release\.nuget\pkg"
-set "CORECLR_PACK_2=%TOP_DIR%\coreclr\Product\Windows_NT.x86.Release\.nuget\pkg"
+set "CORECLR_PACK_2=%TOP_DIR%\coreclr\bin\Product\Windows_NT.x86.Release\.nuget\pkg"
 %NUGET% list -source "%CORECLR_PACK_1%" -source "%CORECLR_PACK_2%" -prerelease > "%WWW_DIR%\coreclr.txt"
 %NUGET% init "%CORECLR_PACK_1%" "%PACKAGES_DIR%"
 %NUGET% init "%CORECLR_PACK_2%" "%PACKAGES_DIR%"
@@ -58,11 +58,11 @@ if NOT errorlevel 0 (
   echo corefx x86 failed to build
   exit /b 1
 )
+popd
 
 set "COREFX_PACK=%TOP_DIR%\corefx\bin\packages\Release"
 %NUGET% list -source "%COREFX_PACK%" -prerelease > "%WWW_DIR%\corefx.txt"
 %NUGET% init "%COREFX_PACK%" "%PACKAGES_DIR%"
-popd
 
 
 rem -------- core-setup --------
