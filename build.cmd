@@ -88,10 +88,10 @@ set "CORESETUP_PACK_2=%TOP_DIR%\core-setup\artifacts\win10-x86\corehost"
 
 set "ALL_ARCH=x86 x64"
 for %%i in (%ALL_ARCH%) do (
-  xcopy "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-*.zip" "%WWW_BINARIES_DIR%"
-  xcopy "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-*.exe" "%WWW_SHARED_FRAMEWORK_DIR%"
-  xcopy "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-sharedframework-*.msi" "%WWW_SHARED_FRAMEWORK_DIR%"
-  xcopy "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-host-*.msi" "%WWW_HOST_DIR%"
+  xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-*.zip" "%WWW_BINARIES_DIR%"
+  xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-*.exe" "%WWW_SHARED_FRAMEWORK_DIR%"
+  xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-sharedframework-*.msi" "%WWW_SHARED_FRAMEWORK_DIR%"
+  xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-host-*.msi" "%WWW_HOST_DIR%"
 )
 
 
