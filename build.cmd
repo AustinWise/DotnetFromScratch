@@ -90,14 +90,6 @@ set "CORESETUP_PACK_2=%TOP_DIR%\core-setup\artifacts\win10-x86\corehost"
 %NUGET% list -source "%CORESETUP_PACK_1%" -prerelease > "%WWW_DIR%\core-setup.txt"
 %NUGET% init "%CORESETUP_PACK_1%" "%FROM_SCRATCH_PACKAGES_DIR%"
 
-set "ALL_ARCH=x64"
-for %%i in (%ALL_ARCH%) do (
-  xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-*.zip" "%WWW_BINARIES_DIR%"
-  xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-*.exe" "%WWW_SHARED_FRAMEWORK_DIR%"
-  xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-sharedframework-*.msi" "%WWW_SHARED_FRAMEWORK_DIR%"
-  xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-host-*.msi" "%WWW_HOST_DIR%"
-)
-
 
 echo DONE!
 exit /b 0
