@@ -32,7 +32,7 @@ set CORESETUP_VERSION_URL=http://localhost:56623/core-setup.txt
 
 rem -------- CoreCLR --------
 pushd "%TOP_DIR%\coreclr"
-rem cmd /c build.cmd x64 release skiptests
+cmd /c build.cmd x64 release skiptests
 if NOT errorlevel 0 (
   echo coreclr failed to build
   exit /b 1
