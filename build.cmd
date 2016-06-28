@@ -98,23 +98,6 @@ for %%i in (%ALL_ARCH%) do (
   xcopy /y "%TOP_DIR%\core-setup\artifacts\win10-%%i\packages\dotnet-host-*.msi" "%WWW_HOST_DIR%"
 )
 
-echo Done!
-exit /b 0
-
-rem -------- cli --------
-pushd "%TOP_DIR%\cli"
-rem todo: powershell -File build_projects\update-dependencies\update-dependencies.ps1 -t UpdateFiles
-cmd /c build.cmd -Configuration Release
-if NOT errorlevel 0 (
-  echo cli failed to build
-  exit /b 1
-)
-popd
-
-set "CLI_PACK=C:\externsrc\dotnet\cli\artifacts\win10-x64\packages"
-%NUGET% list -source "%CLI_PACK%" -prerelease > "%WWW_DIR%\cli.txt"
-%NUGET% init "%CLI_PACK%" "%FROM_SCRATCH_PACKAGES_DIR%"
-
 
 echo DONE!
 exit /b 0

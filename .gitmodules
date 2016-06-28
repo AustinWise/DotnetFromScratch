@@ -10,7 +10,3 @@
 	path = core-setup
 	url = https://github.com/dotnet/core-setup.git
 	branch = release/1.0.0
-[submodule "cli"]
-	path = cli
-	url = https://github.com/dotnet/cli.git
-	branch = rel/1.0.0
